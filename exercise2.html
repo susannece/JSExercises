@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - jQuery</title>
+    <script src="jquery-3.6.1.js" type="text/javascript"></script>
+    <style>
+        .italic{
+            font-style: italic;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .purple{
+            color: rebeccapurple;
+        }
+        .background{
+            background-color: bisque;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="ex1">
+        <h3>Exercise 1 - Change Listener</h3>
+        <input type="text" id="input1">
+        <input type="submit" id="submit1" value="Add">
+        <div id="message"></div>
+    </div>
+
+    <div>
+        <h3>Exercise 2 - Show/Hide</h3>
+        <button id="button2">Hide / Show</button><br>
+        <img src="snow globe 3.png" id="image2" width="234" height="269">
+    </div>
+
+    <div id="ex3">
+        <h3>Exercise 3 - Changing CSS styling</h3>
+        <button id="button3">Bold</button>
+        <button id="button4">Remove italic</button>
+        <button id="button5">Surprice</button>
+        <p id="p1" class="italic">Maecenas mauris turpis, luctus vel mauris quis, vestibulum tincidunt metus. 
+            Donec feugiat sodales lorem eu faucibus. Donec vitae dui iaculis, porta lectus eu, aliquet dolor. 
+            Cras efficitur diam metus, ut feugiat augue efficitur et. </p>
+        <p id="p2">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
+            Integer ac lectus venenatis, malesuada est in, iaculis purus. Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit.</p>
+    </div>
+
+    <div>
+        <h3>Exercise 4 - Key Press Listener</h3>
+        <input type="text" id="input4">
+        <p id="p3">Number of keys pressed: </p>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        //Exercise 1
+        $("#submit1").click(function(){
+           $("#message").append("<p>"+ $("#input1").val() + "</p>");
+        });
+
+        //Exercise2
+        $("#button2").click(function(){
+            $("#image2").toggle(2000);
+        });
+
+        //Exercise 3
+        $("#button3").click(function(){
+           $("#p1").addClass("bold");
+        });
+        $("#button4").click(function(){
+           $("#p1").css("font-style", "normal");
+        });
+        $("#button5").click(function(){
+           $("#p1").toggleClass("background");
+        });
+
+        //Exercise 4
+        $("#input4").keypress(function(){
+            $("p3").text(i += 1);
+        });
+
+    });
+</script>
